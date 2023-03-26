@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Bills</title>
+  </head>
+  <body>
+    <h1>Bills</h1>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Amount</th>
+      </tr>
+      {% for bill in bills %}
+        <tr>
+          <td>{{ bill.date }}</td>
+          <td>{{ bill.description }}</td>
+          <td>{{ bill.amount }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    <h2>Add Bill</h2>
+    <form action="#" method="post">
+      <div>
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date">
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description">
+      </div>
+      <div>
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount">
+      </div>
+      <button type="submit">Add</button>
+    </form>
+  </body>
+</html>
