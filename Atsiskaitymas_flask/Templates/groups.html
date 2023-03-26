@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Groups</title>
+  </head>
+  <body>
+    <h1>Groups</h1>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+      {% for group in groups %}
+        <tr>
+          <td><a href="{{ url_for('bills', group_id=group.id) }}">{{ group.id }}</a></td>
+          <td>{{ group.name }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    <h2>Join Group</h2>
+    <form action="#" method="post">
+      <div>
+        <label for="group_id">Group ID:</label>
+        <input type="text" id="group_id" name="group_id">
+      </div>
+      <button type="submit">Join</button>
+    </form>
+  </body>
+</html>
